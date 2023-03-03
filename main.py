@@ -12,11 +12,12 @@ class Equation:
         self.x = x
         self.eqn = eqn
         return eval(self.eqn)
+
     def introduceCalculator(self):
         print("________________________________________________________________________________________________________________")
-        # print(f"Hi this is Ali Neaz . I am a student of department of department of Statistics at Islamic University, Kushtia.")
         print(f"Hi this is {self.name}. I am a student of {self.department} at {self.school}")
         print("________________________________________________________________________________________________________________")
+
     def bisection(self,n,eqn):
         self.n = n
         a = self.calc_a(eqn)
@@ -37,18 +38,19 @@ class Equation:
 
     def regularFalsi(self,a,b,eqn):
         pass
+
     def newtonRaphson(self,a,b,eqn):
         pass
 
     def calc_a(self,eqn):
         self.eqn = eqn
-        for i in range(-10,10):
+        for i in range(-10,11):
             if self.evaluate(i,eqn) < 0:
                 return i
         print("Sorry the range overflowed.")
         return None
     def calc_b(self,eqn):
-        for i in range(-10,10):
+        for i in range(-10,11):
             if self.evaluate(i,eqn) > 0:
                 return i
         print("Sorry the range overflowed.")
@@ -57,7 +59,7 @@ class Equation:
 
 
 if __name__ == "__main__":
-    print("_______________________Wellcome to my equation solver_______________________")
+    print("_______________________Wellcome to Neaz's equation solver_______________________")
     print("Enter your name: ")
     name = input()
     run = True
@@ -68,8 +70,8 @@ if __name__ == "__main__":
         print("3. Newton Raphson Method")
         print("4. Evaluate the equation")
         print("5. Introduce Calculator")
-        print("6. To quit")
-        print("7. Whoami?")
+        print("6. Whoami?")
+        print("7. To quit")
         choice = input()
         eqns = Equation(name)
         if choice == "1":
@@ -82,12 +84,12 @@ if __name__ == "__main__":
             print(eqns.evaluate(x,eqn))
         elif choice == "5":
             eqns.introduceCalculator()
-        elif choice == "6":
-            run = False
-        elif choice=="7":
+        elif choice=="6":
             print(f"You ar {name} and we are happy that you are using our code.")
             print("Thank you.")
+        elif choice == "7":
+            run = False
 
     print("Thank you for using my code.",name)
-    print("_______________________Do Come Agein_______________________")
+    print("_______________________ Do Come Agein _______________________")
         
